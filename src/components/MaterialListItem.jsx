@@ -12,6 +12,7 @@ const MaterialListItem = ( { material } )=>{
 
     return (
         <Paper
+        elevation={3}
         onClick={ () => {
             if ( isToExport ) {
                 dispatch({ type: 'REMOVE_EXPORT_ITEM', payload: material })

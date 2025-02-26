@@ -1,52 +1,17 @@
-import { Box, Typography } from "@mui/material";
-import MaterialListItem from "../components/MaterialListItem";
-import materialsDB from "../utils/materialsDB";
+import { Grid2 } from "@mui/material";
 import ExportXml from "../components/ExportXml";
+import MaterialsList from "../components/MaterialsList";
 
 const Materials = ()=>{
     return (
-        <Box
-        sx={{
-            display:'flex',
-        }}>
-            <Box
-            sx={{
-                height:'inherit',
-                display:'flex',
-                flexDirection:'column',
-                justifyContent:'center',
-                padding:'20px',
-            }}>
-                <Typography
-                variant="h2"
-                sx={{
-                    fontSize:'30px',
-                    fontWeight:'600',
-                    mb:'20px'
-                }}>
-                    Материалы
-                </Typography>
-
-                <Box
-                sx={{
-                    display:'flex',
-                    flexDirection:'column',
-                    gap:'10px',
-                }}
-                >
-                {
-                    materialsDB.map((material)=>{
-                        return (
-                            <MaterialListItem key={material.id} material={material}/>
-                        )
-                    })
-                }
-                </Box>
-
-            </Box>
-
-            <ExportXml />
-        </Box>
+        <Grid2 container spacing={2} justifyContent="space-between">
+            <Grid2 xs={true} style={{ display: 'flex', flexGrow: 1 }}>
+                <MaterialsList />
+            </Grid2>
+            <Grid2>
+                <ExportXml />
+            </Grid2>
+        </Grid2>
     )
 }
 

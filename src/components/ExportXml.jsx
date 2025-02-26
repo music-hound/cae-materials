@@ -44,16 +44,16 @@ const ExportXml = ()=>{
     return (
             <Box
             sx={{
-                marginTop:'20px',
+                position:'sticky',
+                top:'80px',
+                margin:'0px 20px 0px 0px',
                 padding:'20px',
                 border:'1px solid',
                 borderRadius:'20px',
                 borderColor:'primary.main',
-                height:'100%',
                 display:'flex',
                 flexDirection:'column',
                 gap:'10px',
-                backgroundColor:'#ddd',
             }}>
                     <Typography
                         variant="h2"

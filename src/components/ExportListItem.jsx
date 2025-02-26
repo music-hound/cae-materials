@@ -9,6 +9,7 @@ const ExportListItem = ( { material } )=>{
 
     return (
         <Paper
+        elevation={2}
         sx={{
             width:'100%',
             wordWrap: "break-word",

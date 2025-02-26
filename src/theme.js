@@ -10,7 +10,7 @@ const lightTheme = createTheme({
       main: "#666", // Розовый
     },
     background: {
-      default: "#f4f6f8", // Светлый фон
+      default: "#fff", // Светлый фон
       dashboard:'#1976d2',
       paper: "#ffffff", // Белый для карточек и модальных окон
     },
@@ -20,7 +20,7 @@ const lightTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Helvetica, Arial, sans-serif",
+    fontFamily: "Helvetica",
   },
 });
 
@@ -34,7 +34,7 @@ const darkTheme = createTheme({
       main: "#ccc", // Розовый
     },
     background: {
-      default: "#121212", // Тёмный фон
+      default: "#181818", // Тёмный фон
       dashboard:'#1976d2',
       paper: "#1e1e1e", // Тёмный фон для карточек и модальных окон
     },
@@ -44,7 +44,7 @@ const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Helvetica, Arial, sans-serif",
+    fontFamily: "Helvetica",
   },
 });
 
