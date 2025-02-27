@@ -12,13 +12,14 @@ const Header = ( )=>{
     return (
         <Box
         sx={{
+            transition:'0.3s',
             width:'100%',
             height:'60px',
             padding:`20px`,
             display:'flex',
             justifyContent:'space-between',
             alignItems:'center',
-            backgroundColor: 'background.main',
+            backgroundColor: 'background.default',
             position:'fixed',
             zIndex:'5',
             borderBottom:'1px solid',

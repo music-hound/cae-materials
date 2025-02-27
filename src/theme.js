@@ -23,6 +23,7 @@ const lightTheme = createTheme({
     background: {
       main: "#fff",
       paper: "#ffffff",
+      hover: '#CAE8FF',
     },
     text: {
       primary: "#333",
@@ -49,8 +50,9 @@ const darkTheme = createTheme({
       main: "#ccc",
     },
     background: {
-      main: "#181818",
+      default: "#181818",
       paper: "#1e1e1e",
+      hover: '#D90000',
     },
     text: {
       primary: "#ddd",

@@ -1,54 +1,30 @@
+import PropTypes from 'prop-types';
 import { Box } from "@mui/material";
-import CustomButton from "./CustomButton";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
-const SideBar = ()=>{
-    
-    const menuOpen = useSelector( state => state.menuOpen )
-    const navigate = useNavigate();
-
-    function handleClick( route ){
-        navigate(route)
-    }
+const SideBar = ( { children })=>{
 
     return (
         <Box
         sx={{
-            width:'220px',
+            // width:'220px',
             transition:'0.3s',
-            transform:`translateX(${ menuOpen ? '0px' : '-300px'})`,
+            // transform:`translateX(${ menuOpen ? '550px' : '-300px'})`,
             position:'fixed',
+            right:'0px',
             height:'100vh',
-            backgroundColor:'primary.main',
+            backgroundColor:'background.default',
             display:'flex',
             flexDirection:'column',
             gap:'10px',
-            padding:'20vh 20px 0px 20px',
-            borderRight:'1px solid',
-            borderColor:'border.soft'
+            padding:'60px 20px 0px 20px',
         }}>
-
-
-            <CustomButton
-            label={'Материалы'}
-            handleClick={ () => {handleClick('./')} }
-            />
-            <CustomButton
-            label={'Инструкции'}
-            handleClick={ () => {handleClick('./studies')} }
-            />
-            <CustomButton
-            label={'Проекты'}
-            handleClick={ () => {handleClick('./projects')} }
-            />
-            <CustomButton
-            label={'ГОСТ 35224'}
-            handleClick={ () => {handleClick('./calc')} }
-            />
-
+            { children }
         </Box>
     )
+}
+
+SideBar.propTypes = {
+    children : PropTypes.node,
 }
 
 export default SideBar;

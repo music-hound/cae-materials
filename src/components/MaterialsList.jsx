@@ -12,7 +12,7 @@ const MaterialsList = ()=>{
                 display:'flex',
                 flexDirection:'column',
                 justifyContent:'center',
-                padding:'60px 150px',
+                padding:'60px 10%',
             }}>
                 <Typography
                 variant="h2"
@@ -26,7 +26,7 @@ const MaterialsList = ()=>{
 
                 <Divider
                 sx={{
-                    m:2,
+                    mb:2,
                 }}
                 />
 

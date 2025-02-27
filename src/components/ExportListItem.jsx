@@ -25,7 +25,7 @@ const ExportListItem = ( { material } )=>{
             <Typography
             sx={{
                 flexGrow:'1',
-                fontWeight:'600'
+                fontSize:'14px'
             }}>
                 {material.material_name}
             </Typography>

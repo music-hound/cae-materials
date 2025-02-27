@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import ExportListItem from "./ExportListItem";
 import CustomButton from "./CustomButton";
@@ -44,13 +44,8 @@ const ExportXml = ()=>{
     return (
             <Box
             sx={{
-                position:'sticky',
-                top:'80px',
-                margin:'0px 20px 0px 0px',
+                minWidth:'420px',
                 padding:'20px',
-                border:'1px solid',
-                borderRadius:'20px',
-                borderColor:'primary.main',
                 display:'flex',
                 flexDirection:'column',
                 gap:'10px',
@@ -58,11 +53,17 @@ const ExportXml = ()=>{
                     <Typography
                         variant="h2"
                         sx={{
-                            fontSize:'30px',
-                            fontWeight:'600',
+                            fontSize:'20px',
+                            fontWeight:'400'
                         }}>
                             Экспорт XML
                     </Typography>
+
+                    <Divider
+                    sx={{
+                        mb:2,
+                    }}
+                    />
 
                 {
                     exportList.map((material)=>{

@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import { Box } from '@mui/material';
-import SideBar from '../components/SideBar';
 import { useSelector } from 'react-redux';
+import NavBar from '../components/NavBar';
 
 const Layout = () => {
   const menuOpen = useSelector( state => state.menuOpen )
   return (
   <Box>
     <Header />
-    <SideBar />
+    <NavBar />
     <Box
     sx={{
       transition:'0.3s',
