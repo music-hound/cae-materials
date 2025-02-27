@@ -1,22 +1,34 @@
 import { createTheme } from "@mui/material/styles";
 
+const breakpointValues = {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+  }
+
 const lightTheme = createTheme({
+  breakpoints: {
+    values: breakpointValues,
+  },
   palette: {
     mode: "light",
     primary: {
-      main: "#1976d2", // Синий
+      main: "#fff",
     },
     secondary: {
-      main: "#666", // Розовый
+      main: "#666",
     },
     background: {
-      default: "#fff", // Светлый фон
-      dashboard:'#1976d2',
-      paper: "#ffffff", // Белый для карточек и модальных окон
+      main: "#fff",
+      paper: "#ffffff",
     },
     text: {
-      primary: "#000000", // Чёрный текст
-      secondary: "#555555", // Тёмно-серый текст
+      primary: "#333",
+    },
+    border: {
+      soft:'#ddd'
     },
   },
   typography: {
@@ -25,22 +37,26 @@ const lightTheme = createTheme({
 });
 
 const darkTheme = createTheme({
+  breakpoints: {
+    values: breakpointValues,
+  },
   palette: {
     mode: "dark",
     primary: {
-      main: "#90caf9", // Светло-синий
+      main: "#181818",
     },
     secondary: {
-      main: "#ccc", // Розовый
+      main: "#ccc",
     },
     background: {
-      default: "#181818", // Тёмный фон
-      dashboard:'#1976d2',
-      paper: "#1e1e1e", // Тёмный фон для карточек и модальных окон
+      main: "#181818",
+      paper: "#1e1e1e",
     },
     text: {
-      primary: "#ffffff", // Белый текст
-      secondary: "#aaaaaa", // Светло-серый текст
+      primary: "#ddd",
+    },
+    border: {
+      soft:'#333'
     },
   },
   typography: {

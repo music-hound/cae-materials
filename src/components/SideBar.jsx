@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import CustomButton from "./CustomButton";
-import Switch from '../components/SwitchCustom';
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -25,7 +24,9 @@ const SideBar = ()=>{
             display:'flex',
             flexDirection:'column',
             gap:'10px',
-            padding:'20vh 20px 0px 20px'
+            padding:'20vh 20px 0px 20px',
+            borderRight:'1px solid',
+            borderColor:'border.soft'
         }}>
 
 
@@ -45,9 +46,7 @@ const SideBar = ()=>{
             label={'ГОСТ 35224'}
             handleClick={ () => {handleClick('./calc')} }
             />
-            
 
-            <Switch />
         </Box>
     )
 }
