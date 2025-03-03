@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux';
 import NavBar from '../components/NavBar';
 
 const Layout = () => {
-  const menuOpen = useSelector( state => state.menuOpen )
+  const menuOpen = useSelector( state => state.menuOpen );
+  const exportList = useSelector(state => state.exportList);
   return (
   <Box>
     <Header />
@@ -14,7 +15,8 @@ const Layout = () => {
     sx={{
       transition:'0.3s',
       paddingTop:'60px',
-      paddingLeft:`${ menuOpen ? '220px' : '0px' }`
+      paddingLeft:`${ menuOpen ? '220px' : '0px' }`,
+      paddingRight:`${ exportList.length === 0 ? '0px' : '350px' }`
     }}>
     <Outlet />
     </Box>

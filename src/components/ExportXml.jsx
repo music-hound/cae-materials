@@ -43,7 +43,7 @@ const ExportXml = ()=>{
     return (
             <Box
             sx={{
-                // minWidth:'420px',
+                minWidth:'350px',
                 padding:'20px',
                 display:'flex',
                 flexDirection:'column',
