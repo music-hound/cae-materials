@@ -1,12 +1,35 @@
 const materialsDB = [
     {
         id:1,
+        approved: true,
         icon:'solid',
         material_name:'Сталь (магистральная труба)',
+        properties:[
+            {
+                label:'Теплопроводность',
+                name:'thermal_conductivity',
+                xmlName:'thermalconductivity',
+                value:'56',
+                unit:'Вт/(м·K)',
+            },
+            {
+                label:'Плотность',
+                name:'density',
+                xmlName:'thermalconductivity',
+                value:'7800',
+                unit:'кг/м³',
+            },
+            {
+                label:'',
+                name:'heat_capacity_at_constant_pressure',
+                xmlName:'heatcapacityatconstantpressure',
+                value:'460',
+                unit:'Дж/моль·К',
+            }
+        ],
         thermal_conductivity:'56',
         density:'7800',
         heat_capacity_at_constant_pressure: '460',
-        approved:'false',
     },
     {
         id:2,
@@ -15,7 +38,7 @@ const materialsDB = [
         thermal_conductivity:'0.606',
         density:'1000',
         heat_capacity_at_constant_pressure:'4200',
-        approved:'false',
+        approved: true,
     },
     {
         id:3,
@@ -24,7 +47,7 @@ const materialsDB = [
         thermal_conductivity:'0.035',
         density:'50',
         heat_capacity_at_constant_pressure:'1256',
-        approved:'false',
+        approved:false,
     },
     {
         id:4,
@@ -33,7 +56,7 @@ const materialsDB = [
         thermal_conductivity:'398',
         density:'8960',
         heat_capacity_at_constant_pressure:'385',
-        approved:'false',
+        approved:false,
     },
     {
         id:5,
@@ -42,7 +65,7 @@ const materialsDB = [
         thermal_conductivity:'0.0257',
         density:'1.204',
         heat_capacity_at_constant_pressure:'1005',
-        approved:'false',
+        approved:false,
     },
     {
         id:6,
@@ -51,7 +74,7 @@ const materialsDB = [
         thermal_conductivity:'0.35',
         density:'940',
         heat_capacity_at_constant_pressure:'2100',
-        approved:'false',
+        approved:false,
     },
     {
         id:7,
@@ -60,7 +83,7 @@ const materialsDB = [
         thermal_conductivity:'0.18',
         density:'1350',
         heat_capacity_at_constant_pressure:'1150',
-        approved:'false',
+        approved:true,
     },
     {
         id:8,
@@ -69,7 +92,7 @@ const materialsDB = [
         thermal_conductivity:'0.2',
         density:'1300',
         heat_capacity_at_constant_pressure:'1350',
-        approved:'false',
+        approved:true,
     },
     {
         id:9,
@@ -78,7 +101,7 @@ const materialsDB = [
         thermal_conductivity:'0.35',
         density:'950',
         heat_capacity_at_constant_pressure:'1650',
-        approved:'false',
+        approved:false,
     },
 
 ]

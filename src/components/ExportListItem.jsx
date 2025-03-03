@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { IconButton, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useDispatch } from "react-redux";
 
@@ -8,39 +8,38 @@ const ExportListItem = ( { material } )=>{
     const dispatch = useDispatch();
 
     return (
-        <Paper
-        elevation={2}
+        <Box
         sx={{
+            border:'1px solid',
+            borderColor:'border.soft',
+            borderRadius:'5px',
             width:'100%',
             wordWrap: "break-word",
-            borderRadius:'10px',
-            padding:'20px',
-            paddingRight:'80px',
-            cursor:'pointer',
+            padding:'10px',
             display:'flex',
-            flexDirection:'column',
+            alignItems:'center',
+            justifyContent:'space-between',
             gap:'20px',
-            position:'relative'
         }}>
             <Typography
             sx={{
                 flexGrow:'1',
-                fontSize:'14px'
+                fontSize:'12px'
             }}>
                 {material.material_name}
             </Typography>
 
-            <IconButton
-            onClick={ () => dispatch({ type: 'REMOVE_EXPORT_ITEM', payload: material }) }
-            sx={{
-                position:'absolute',
-                top:'10px',
-                right:'10px'
-            }}>
-                <DeleteIcon />
-            </IconButton>
+                <DeleteIcon
+                onClick={
+                    () => dispatch({ type: 'REMOVE_EXPORT_ITEM', payload: material })
+                }
+                sx={{
+                    fontSize:'20px',
+                    cursor:'pointer'
+                }}
+                />
 
-        </Paper>
+        </Box>
     )
 }
 

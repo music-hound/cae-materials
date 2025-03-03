@@ -15,17 +15,21 @@ const MaterialsList = ()=>{
                 padding:'60px 10%',
             }}>
                 <Typography
-                variant="h2"
                 sx={{
                     fontSize:'30px',
                     fontWeight:'600',
-                    mb:'20px'
+                    mb:1,
                 }}>
                     Материалы
                 </Typography>
 
+                <Typography>
+                    Подготовленные свойства материалов для компьютерного моделирования. После выбора набора материалов их можно загрузить в формате XML для импорта в ПО для моделирования.
+                </Typography>
+
                 <Divider
                 sx={{
+                    mt:1,
                     mb:2,
                 }}
                 />

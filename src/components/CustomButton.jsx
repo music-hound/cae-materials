@@ -12,6 +12,7 @@ const CustomButton = ( { label, handleClick } )=>{
             height:'40px',
             border:'1px solid #ffffff44',
             borderRadius:'10px',
+            mt:2
         }}
         >
             {label}

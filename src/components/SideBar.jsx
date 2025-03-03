@@ -6,17 +6,18 @@ const SideBar = ( { children })=>{
     return (
         <Box
         sx={{
-            // width:'220px',
+            borderLeft:'1px solid',
+            borderColor:'border.soft',
             transition:'0.3s',
-            // transform:`translateX(${ menuOpen ? '550px' : '-300px'})`,
             position:'fixed',
+            top:'0px',
             right:'0px',
             height:'100vh',
-            backgroundColor:'background.default',
             display:'flex',
             flexDirection:'column',
             gap:'10px',
-            padding:'60px 20px 0px 20px',
+            padding:'80px 20px 0px 20px',
+            backgroundColor:'background.default',
         }}>
             { children }
         </Box>

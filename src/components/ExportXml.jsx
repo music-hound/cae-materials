@@ -1,7 +1,6 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import ExportListItem from "./ExportListItem";
-import CustomButton from "./CustomButton";
 
 const ExportXml = ()=>{
 
@@ -44,7 +43,7 @@ const ExportXml = ()=>{
     return (
             <Box
             sx={{
-                minWidth:'420px',
+                // minWidth:'420px',
                 padding:'20px',
                 display:'flex',
                 flexDirection:'column',
@@ -61,7 +60,7 @@ const ExportXml = ()=>{
 
                     <Divider
                     sx={{
-                        mb:2,
+                        mb:1
                     }}
                     />
 
@@ -72,10 +71,10 @@ const ExportXml = ()=>{
                         )
                     })
                 }
-                    <CustomButton
-                    label={'Скачать XML'}
-                    handleClick={handleDownload}
-                    />                
+                    <Button
+                    variant="contained"
+                    onClick={handleDownload}
+                    >Скачать XML</Button>                
         </Box>
     )
 }

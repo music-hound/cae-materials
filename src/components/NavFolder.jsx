@@ -15,7 +15,7 @@ const NavFolder = ( { label, handleClick } )=>{
             boxSizing:'border-box',
             padding:'10px 10px',
             borderRadius:'5px',
-            "&:hover" : { backgroundColor:'background.hover' }
+            "&:hover" : { backgroundColor:'primary.main' }
         }}
         >
             - {label}

@@ -1,25 +1,45 @@
 /* eslint-disable react/prop-types */
-import { Paper } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 
 const GostCalc = ()=>{
 
     return (
-        <Paper
-        onClick={()=>{alert('!')}}
-        sx={{
-            maxWidth:'600px',
-            wordWrap: "break-word",
-            width:'100%',
-            borderRadius:'10px',
-            padding:'20px',
-            cursor:'pointer',
-            display:'flex',
-            flexDirection:'column',
-            gap:'20px',
-            position:'relative'
-        }}>
+        <Box
+            sx={{
+                width:'100%',
+                maxWidth:'1200px',
+                height:'inherit',
+                display:'flex',
+                flexDirection:'column',
+                justifyContent:'center',
+                padding:'60px 10%',
+            }}>
+                <Typography
+                variant="h2"
+                sx={{
+                    fontSize:'30px',
+                    fontWeight:'600',
+                    mb:'20px'
+                }}>
+                    Калькулятор расчета превышения температуры
+                </Typography>
 
-        </Paper>
+                <Divider
+                sx={{
+                    mb:2,
+                }}
+                />
+
+                <Box
+                sx={{
+                    display:'flex',
+                    flexDirection:'column',
+                    gap:'10px',
+                }}
+                >
+                </Box>
+
+        </Box>
     )
 }
 
