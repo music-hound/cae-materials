@@ -13,8 +13,6 @@ const ExportListItem = ( { material } )=>{
             border:'1px solid',
             borderColor:'border.soft',
             borderRadius:'5px',
-            width:'100%',
-            wordWrap: "break-word",
             padding:'10px',
             display:'flex',
             alignItems:'center',
@@ -24,7 +22,7 @@ const ExportListItem = ( { material } )=>{
             <Typography
             sx={{
                 flexGrow:'1',
-                fontSize:'12px'
+                fontSize:'14px'
             }}>
                 {material.material_name}
             </Typography>

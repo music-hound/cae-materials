@@ -5,6 +5,7 @@ const ErrorPage = ()=>{
     const dispatch = useDispatch()
     return (
         <Box
+        className={'pagePadding'}
         sx={{
             width:'100%',
             height:'inherit',

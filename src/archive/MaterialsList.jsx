@@ -1,6 +1,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 import MaterialListItem from "../components/MaterialListItem";
 import materialsDB from "../utils/materialsDB";
+import ExportXml from "./ExportXml";
 
 const MaterialsList = ()=>{
     return (
@@ -12,24 +13,22 @@ const MaterialsList = ()=>{
                 display:'flex',
                 flexDirection:'column',
                 justifyContent:'center',
-                padding:'60px 10%',
+                padding:'60px 200px',
             }}>
                 <Typography
+                variant="h2"
                 sx={{
                     fontSize:'30px',
                     fontWeight:'600',
-                    mb:1,
+                    mb:'20px'
                 }}>
                     Материалы
                 </Typography>
 
-                <Typography>
-                    Подготовленные свойства материалов для компьютерного моделирования. После выбора набора материалов их можно загрузить в формате XML для импорта в ПО для моделирования.
-                </Typography>
+                <ExportXml />
 
                 <Divider
                 sx={{
-                    mt:1,
                     mb:2,
                 }}
                 />

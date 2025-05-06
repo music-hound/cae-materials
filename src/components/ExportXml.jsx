@@ -1,11 +1,12 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useSelector } from "react-redux";
 import ExportListItem from "./ExportListItem";
+import DownloadIcon from '@mui/icons-material/Download';
+import PropTypes from 'prop-types';
 
-const ExportXml = ()=>{
+const ExportXml = ( { exportVisible } )=>{
 
     const exportList = useSelector(state => state.exportList)
-    if ( exportList.length === 0) return;
 
     const generateXML = (materials) => {
         let xmlString = `<?xml version="1.0" encoding="UTF-8"?>\n<archive>\n  <model>\n`;
@@ -43,27 +44,20 @@ const ExportXml = ()=>{
     return (
             <Box
             sx={{
-                minWidth:'350px',
+                zIndex:'10',
+                backgroundColor:'background.default',
+                border:'1px solid',
+                borderColor:'border.soft',
+                borderRadius:'10px',
+                position:'absolute',
+                right:'0px',
+                top:'50px',
                 padding:'20px',
-                display:'flex',
+                display:`${ exportVisible ? 'flex' : 'none' }`,
                 flexDirection:'column',
                 gap:'10px',
+                boxShadow:'0px 0px 30px rgba(0, 0, 0, 0.25)',
             }}>
-                    <Typography
-                        variant="h2"
-                        sx={{
-                            fontSize:'20px',
-                            fontWeight:'400'
-                        }}>
-                            Экспорт XML
-                    </Typography>
-
-                    <Divider
-                    sx={{
-                        mb:1
-                    }}
-                    />
-
                 {
                     exportList.map((material)=>{
                         return (
@@ -74,9 +68,15 @@ const ExportXml = ()=>{
                     <Button
                     variant="contained"
                     onClick={handleDownload}
-                    >Скачать XML</Button>                
+                    >
+                        <DownloadIcon />Загрузить
+                    </Button>                
         </Box>
     )
 }
+
+ExportXml.propTypes = {
+    exportVisible: PropTypes.bool.isRequired,
+};
 
 export default ExportXml;

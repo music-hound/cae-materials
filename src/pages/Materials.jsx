@@ -1,24 +1,60 @@
-import { Box } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import ExportXml from "../components/ExportXml";
-import MaterialsList from "../components/MaterialsList";
-import SideBar from "../components/SideBar";
-import { useSelector } from "react-redux";
+import materialsDB from "../utils/materialsDB";
+import MaterialListItem from "../components/MaterialListItem";
+import { useState } from "react";
 
 const Materials = ()=>{
-    const exportList = useSelector(state => state.exportList)
+    const [ exportVisible, setExportVisible ] = useState(false);
     return (
         <Box
+        className={'pagePadding'}
         sx={{
-            display:'flex'
+            width:'100%',
+            display:'flex',
+            height:'inherit',
+            flexDirection:'column',
+            justifyContent:'center',
+            gap:'20px',
         }}>
-            <MaterialsList />
+            <Box
+                sx={{
+                    display:'flex',
+                    justifyContent:'space-between',
+                    alignItems:'center',
+                }}>
+                    <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize:'30px',
+                        fontWeight:'600',
+                    }}>
+                        Материалы
+                    </Typography>
+                    <Box
+                    sx={{position:'relative'}}
+                    >                        
+                        <Button variant='contained' onClick={()=>{setExportVisible(!exportVisible)}}>Экспорт XML</Button>
+                        <ExportXml exportVisible={exportVisible}/>
+                    </Box>
+                </Box>
+            <Divider />
 
-            { exportList.length !== 0 &&
-                <SideBar>
-                    <ExportXml />
-                </SideBar>
-            }
-            
+            <Box
+            sx={{
+                display:'grid',
+                gridTemplateColumns:'repeat(auto-fill, minmax(300px, 1fr))',
+                gridGap:'20px',
+            }}>  
+                {
+                    materialsDB.map((material)=>{
+                        return (
+                            <MaterialListItem key={material.id} material={material}/>
+                        )
+                    })
+                }
+            </Box>
+
         </Box>
     )
 }

@@ -1,18 +1,17 @@
-/* eslint-disable react/prop-types */
 import { Box, Divider, Typography } from "@mui/material";
+import LockPersonIcon from '@mui/icons-material/LockPerson';
 
 const Projects = ()=>{
 
     return (
         <Box
+        className={'pagePadding'}
             sx={{
                 width:'100%',
-                maxWidth:'1200px',
                 height:'inherit',
                 display:'flex',
                 flexDirection:'column',
                 justifyContent:'center',
-                padding:'60px 10%',
             }}>
                 <Typography
                 variant="h2"
@@ -38,6 +37,15 @@ const Projects = ()=>{
                 }}
                 >
                 </Box>
+
+                <Box
+                sx={{
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center',
+                    gap:'10px',
+                    height:'60vh',
+                }}><LockPersonIcon sx={{fontSize:'100px',color:'#ccc'}} /></Box>
 
         </Box>
     )

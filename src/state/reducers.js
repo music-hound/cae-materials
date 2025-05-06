@@ -10,7 +10,7 @@ function isLight(state=deviceTheme, action){
     }
 }
 
-function menuOpen(state=true, action){
+function menuOpen(state=false, action){
     switch (action.type) {
         case 'TOGGLE_MENU':
             return !state

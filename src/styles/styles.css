@@ -1,3 +1,53 @@
 body {
     transition: 0.3s;
+    font-family: 'Helvetica';
+}
+.pagePadding{
+    padding: 60px 200px;
+}
+
+.outletContainer {
+    padding-left: 220px;
+    padding-top: 60px;
+}
+
+.navBar {
+    z-index: 4;
+    width: 220px;
+    transition: 0.3s;
+    transform: translateX(0px);
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 80px 10px 0px 10px;
+    border-right: 1px solid;
+}
+
+@media (max-width: 1300px) {
+    .pagePadding {
+        padding: 60px 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    .pagePadding {
+        padding: 60px 50px;
+    }
+    .outletContainer {
+        padding-left: 0px;
+    }
+    .navBar {
+        transform: translateX(-220px);
+    }
+    .navBarVisible {
+        transform: translateX(0px);
+    }
+}
+
+@media (max-width: 500px) {
+    .pagePadding {
+        padding: 60px 20px;
+    }
 }

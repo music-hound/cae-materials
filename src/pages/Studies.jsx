@@ -1,25 +1,34 @@
-import { Box, Divider, Typography } from "@mui/material";
-const Studies = ()=>{
+import { Box, Button, Divider, Typography } from "@mui/material";
+import studiesDB from "../utils/studiesDB";
+import StudyListItem from "../components/StudyListItem";
+
+const Studies = () => {
     return (
         <Box
+        className={'pagePadding hoverUp'}
             sx={{
                 width:'100%',
-                maxWidth:'1200px',
                 height:'inherit',
                 display:'flex',
                 flexDirection:'column',
                 justifyContent:'center',
-                padding:'60px 10%',
+                gap:'20px',
             }}>
-                <Typography
-                variant="h2"
+                <Box
                 sx={{
-                    fontSize:'30px',
-                    fontWeight:'600',
-                    mb:'20px'
+                    display:'flex',
+                    justifyContent:'space-between',
                 }}>
-                    Учебные материалы
-                </Typography>
+                    <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize:'30px',
+                        fontWeight:'600',
+                    }}>
+                        Учебные материалы
+                    </Typography>
+                    <Button variant='contained'>Добавить методичку</Button>
+                </Box>
 
                 <Divider
                 sx={{
@@ -34,6 +43,21 @@ const Studies = ()=>{
                     gap:'10px',
                 }}
                 >
+                </Box>
+
+                <Box
+                sx={{
+                    display:'grid',
+                    gridTemplateColumns:'repeat(auto-fill, minmax(300px, 1fr))',
+                    gridGap:'20px',
+                }}> 
+                    {
+                        studiesDB.map((study)=>{
+                            return (
+                                <StudyListItem key={study.id} study={study}/>
+                            )
+                        })
+                    }
                 </Box>
 
         </Box>

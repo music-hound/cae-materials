@@ -5,14 +5,13 @@ const GostCalc = ()=>{
 
     return (
         <Box
+        className={'pagePadding'}
             sx={{
                 width:'100%',
-                maxWidth:'1200px',
                 height:'inherit',
                 display:'flex',
                 flexDirection:'column',
                 justifyContent:'center',
-                padding:'60px 10%',
             }}>
                 <Typography
                 variant="h2"

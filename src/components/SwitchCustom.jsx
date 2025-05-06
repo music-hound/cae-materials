@@ -9,7 +9,7 @@ const MaterialUISwitch = styled((props) => {
   return (
     <Switch
     sx={{
-      transform:'scale(0.8)'
+      transform:'scale(0.8)',
     }}
       {...props}
       checked={!isLight}

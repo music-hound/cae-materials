@@ -13,8 +13,18 @@ const MaterialListItem = ( { material } )=>{
 
     return (
         <Box
+        onClick={ () => {
+            if ( isToExport ) {
+                dispatch({ type: 'REMOVE_EXPORT_ITEM', payload: material })
+            } else {
+                dispatch({ type: 'ADD_EXPORT_ITEM', payload: material })
+            }
+        }}
         sx={{
-            width:'100%',
+            cursor:'pointer',
+            transition:'0.3s',
+            border:'1px solid',
+            borderColor: `${isToExport ? 'primary.main' : 'border.soft'}`,
             wordWrap: "break-word",
             borderRadius:'10px',
             padding:'20px',
@@ -29,61 +39,59 @@ const MaterialListItem = ( { material } )=>{
                 alignItems:'center'
             }}>
 
-            <ApprovalLabel approved={material.approved} />
+                <ApprovalLabel approved={material.approved} />
 
-            <Typography
-            sx={{
-                fontWeight:'600'
-            }}>
-                {material.material_name}
-            </Typography>
+                <Typography
+                sx={{
+                    fontWeight:'600'
+                }}>
+                    {material.material_name}
+                </Typography>
 
             </Box>
 
             <Box
             sx={{
-                ml:2,
-                pl:2,
-                borderLeft:'1px solid',
-                borderColor:'border.soft'
+                display:'flex',
+                alignItems:'center'
             }}>
 
-            <Typography
-            sx={{
-                flexGrow:'1',
-            }}>
-                Теплопроводность {material.thermal_conductivity}
-            </Typography>
-            <Typography
-            sx={{
-                flexGrow:'1'
-            }}>
-                Плотность {material.density}
-            </Typography>
-            <Typography
-            sx={{
-                flexGrow:'1'
-            }}>
-                Теплоёмкость при постоянном давлении {material.heat_capacity_at_constant_pressure}
-            </Typography>
+                <IconButton
+                sx={{
+                    transform:'translateX(-9px)'
+                }}>
+                    { isToExport ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon /> }
+                </IconButton>
+
+                <Box
+                sx={{
+                    pl:2,
+                    borderLeft:'1px solid',
+                    borderColor:'border.soft',
+                }}>
+
+                    <Typography
+                    sx={{
+                        flexGrow:'1',
+                    }}>
+                        Теплопроводность {material.thermal_conductivity}
+                    </Typography>
+                    <Typography
+                    sx={{
+                        flexGrow:'1'
+                    }}>
+                        Плотность {material.density}
+                    </Typography>
+                    <Typography
+                    sx={{
+                        flexGrow:'1'
+                    }}>
+                        Теплоёмкость при постоянном давлении {material.heat_capacity_at_constant_pressure}
+                    </Typography>
+
+                </Box>
 
             </Box>
-
-            <IconButton
-            onClick={ () => {
-                if ( isToExport ) {
-                    dispatch({ type: 'REMOVE_EXPORT_ITEM', payload: material })
-                } else {
-                    dispatch({ type: 'ADD_EXPORT_ITEM', payload: material })
-                }
-            }}
-            sx={{
-                position:'absolute',
-                top:'10px',
-                right:'10px'
-            }}>
-                { isToExport ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon /> }
-            </IconButton>
 
         </Box>
     )

@@ -1,27 +1,27 @@
 import { createTheme } from "@mui/material/styles";
 
-const breakpointValues = {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-  }
+// const breakpointValues = {
+//       xs: 0,
+//       sm: 600,
+//       md: 900,
+//       lg: 1200,
+//       xl: 1536,
+//   }
 
 const lightTheme = createTheme({
-  breakpoints: {
-    values: breakpointValues,
-  },
+  // breakpoints: {
+  //   values: breakpointValues,
+  // },
   palette: {
     mode: "light",
     primary: {
-      main: "#CAE8FF",
+      main: "#005387",
     },
     secondary: {
       main: "#666",
     },
     background: {
-      main: "#fff",
+      default: "#fff",
       paper: "#ffffff",
       hover: '#CAE8FF',
     },
@@ -31,6 +31,9 @@ const lightTheme = createTheme({
     border: {
       soft:'#ddd'
     },
+    button: {
+      hover: '#00538744',
+    },
   },
   typography: {
     fontFamily: "Helvetica",
@@ -38,9 +41,9 @@ const lightTheme = createTheme({
 });
 
 const darkTheme = createTheme({
-  breakpoints: {
-    values: breakpointValues,
-  },
+  // breakpoints: {
+  //   values: breakpointValues,
+  // },
   palette: {
     mode: "dark",
     primary: {
@@ -59,6 +62,9 @@ const darkTheme = createTheme({
     },
     border: {
       soft:'#333'
+    },
+    button: {
+      hover: '#990000',
     },
   },
   typography: {
